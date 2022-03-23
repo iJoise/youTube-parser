@@ -1,24 +1,32 @@
 {
-  "name": "telegram-bot",
+  "name": "parser",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "bin/index.ts",
   "author": "iJoise",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/index.ts"
+    "start": "ts-node bin/index.ts"
+  },
+  "bin": {
+    "tube-parser": "bin/index.ts"
   },
   "dependencies": {
+    "@types/readline-sync": "^1.4.4",
+    "ansi-colors": "^4.1.1",
     "axios": "^0.26.1",
+    "cli-progress": "^3.10.0",
     "dotenv": "^16.0.0",
     "node-html-parser": "^5.3.3",
+    "nodejs-file-downloader": "^4.9.3",
     "puppeteer": "^13.5.1",
     "puppeteer-core": "^13.5.1",
-    "ts-node": "^10.7.0",
-    "tslint": "^6.1.3",
+    "readline-sync": "^1.4.10",
     "youtube-node": "^1.3.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15",
+    "@types/cli-progress": "^3.9.2",
+    "ts-node": "^10.7.0",
+    "tslint": "^6.1.3",
     "typescript": "^4.6.2"
   }
 }
