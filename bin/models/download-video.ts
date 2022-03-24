@@ -13,7 +13,7 @@ export const downloadVideo = async (hrefLink: string, browser: puppeteer.Browser
     const resTitle = await titleVideo.jsonValue()
 
     const progress = new cliProgress.SingleBar({
-      format: `Upload Progress: {percentage}% | ${ansi.cyan('{bar}')}`,
+      format: `Download Progress: {percentage}% | ${ansi.cyan('{bar}')}`,
       barCompleteChar: '\u2588',
       barIncompleteChar: '\u2591',
       hideCursor: true

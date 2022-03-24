@@ -5,3 +5,5 @@ export function debug(obj = {}) {
 export function sleep(ms: number) {
    return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+export const youTubeRegexp = /(https:\/\/www\.youtube\.com\/playlist\?list=)[\w\d-]{1,42}/gi;

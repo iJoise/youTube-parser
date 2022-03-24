@@ -26,7 +26,7 @@ export const youTubeParser = async (link: string) => {
   })
 
   const finallyLinkArray = href.slice(1);
-  console.log(ansi.bgGreenBright(ansi.black(`${finallyLinkArray.length} videos found, start uploading`)))
+  console.log(ansi.bgGreenBright(ansi.black(`${finallyLinkArray.length} videos found, start download`)))
 
   for (const el of finallyLinkArray) {
     await downloadVideo(el, browser, dirName);
