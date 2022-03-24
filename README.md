@@ -3,7 +3,7 @@
 
 ### git clone
 ### yarn
-### make tube-parser или yarn start
+### make tp или yarn start
 
 ### Пример работы:
 [![asciicast](https://asciinema.org/a/MQ45trwF6K7x0nQBBIrXaOuib.svg)](https://asciinema.org/a/MQ45trwF6K7x0nQBBIrXaOuib)
