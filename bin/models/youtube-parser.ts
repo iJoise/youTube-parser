@@ -17,7 +17,7 @@ export const youTubeParser = async (link: string) => {
 
   const dirName = root.querySelector('title').childNodes[0].rawText;
   generateFolder(dirName);
-
+  return
   const allHref: HTMLElement[] = root.querySelectorAll('#thumbnail');
   const hrefArr = []
   allHref.forEach(el => hrefArr.push(el.rawAttributes));
