@@ -1,7 +1,8 @@
 import puppeteer from "puppeteer";
 import cliProgress from "cli-progress";
-import ansi from "ansi-colors";
+import ansi, {bgBlue, bgRed} from "ansi-colors";
 import Downloader from "nodejs-file-downloader";
+import {logger} from "../helpers";
 
 export const downloadVideo = async (hrefLink: string, browser: puppeteer.Browser, dirName: string) => {
   const newPage = await browser.newPage();
@@ -18,6 +19,7 @@ export const downloadVideo = async (hrefLink: string, browser: puppeteer.Browser
       barIncompleteChar: '\u2591',
       hideCursor: true
     });
+    progress.start(100, 0);
 
     const downloader = new Downloader({
       url: await linkVideo.jsonValue(),
@@ -27,15 +29,15 @@ export const downloadVideo = async (hrefLink: string, browser: puppeteer.Browser
         progress.update(+percentage)
         progress.increment();
       },
-    })
-    progress.start(100, 0)
+    });
+
 
     await downloader.download();
     progress.stop();
-    console.log(ansi.bgBlue(`Video ${resTitle.toString()} saved ...`));
+    logger(`Video ${resTitle.toString()} saved ...`, bgBlue);
     await newPage.close()
   } catch (err) {
-    console.log(ansi.bgRed('Timeout expired, try again...'));
+    logger('Timeout expired, try again...', bgRed);
     await newPage.reload({
       timeout: 2000
     })

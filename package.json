@@ -8,7 +8,7 @@
     "start": "ts-node bin/index.ts"
   },
   "bin": {
-    "tube-parser": "bin/index.ts"
+    "tp": "bin/index.ts"
   },
   "dependencies": {
     "@types/readline-sync": "^1.4.4",

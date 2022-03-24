@@ -1,5 +1,6 @@
 import fs from "fs";
-import ansi from "ansi-colors";
+import ansi, {bgMagenta} from "ansi-colors";
+import {logger} from "../helpers";
 
 export const generateFolder = (dirName: string) => {
   const path = `./bin/assets/${dirName}`;
@@ -9,5 +10,5 @@ export const generateFolder = (dirName: string) => {
     fs.rmSync(path, {recursive: true, force: true})
     fs.mkdirSync(path)
   }
-  console.log(ansi.bgMagenta(`folder created ${dirName}`))
+  logger(`folder created ${dirName}`, bgMagenta)
 }

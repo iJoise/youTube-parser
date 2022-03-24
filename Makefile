@@ -1,2 +1,2 @@
-tube-parser:
+tp:
 		ts-node bin/index.ts
