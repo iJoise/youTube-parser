@@ -34,7 +34,7 @@ export const downloadVideo = async (hrefLink: string, browser: puppeteer.Browser
 
     await downloader.download();
     progress.stop();
-    logger(`Video ${resTitle.toString()} saved ...`, bgBlue);
+    logger(`Video ${resTitle.toString()} saved...`, bgBlue);
     await newPage.close()
   } catch (err) {
     logger('Timeout expired, try again...', bgRed);
