@@ -31,7 +31,6 @@ export const downloadVideo = async (hrefLink: string, browser: puppeteer.Browser
       },
     });
 
-
     await downloader.download();
     progress.stop();
     logger(`Video ${resTitle.toString()} saved...`, bgBlue);
